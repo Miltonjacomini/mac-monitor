@@ -1,0 +1,59 @@
+#App {
+    height: 100vh;
+    width: 100vw;
+    background-color: #1b2636;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #7d56f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section {
+    background: #253347;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #3d4f6a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #faacac;
+}
+
+.stat {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.core {
+    background: #1b2636;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+}
