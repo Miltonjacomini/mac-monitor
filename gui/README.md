@@ -1,19 +1,48 @@
-# README
+# 🖥️ mac-monitor GUI
 
-## About
+Esta é a interface gráfica do **mac-monitor**, construída com [Wails v2](https://wails.io/) e [React](https://reactjs.org/).
 
-This is the official Wails React-TS template.
+## 🚀 Como Iniciar
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+### Pré-requisitos
 
-## Live Development
+1. **Go 1.18+** instalado.
+2. **Wails CLI** instalado:
+   ```bash
+   go install github.com/wailsapp/wails/v2/cmd/wails@latest
+   ```
+3. **Node.js 16+** e **NPM** instalados.
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+### Desenvolvimento (Hot Reload)
 
-## Building
+Para rodar o projeto em modo de desenvolvimento, use o comando abaixo na raiz do projeto:
 
-To build a redistributable, production mode package, use `wails build`.
+```bash
+make gui-dev
+```
+
+Isso iniciará o Wails em modo `dev`, fornecendo Hot Reload tanto para o código Go quanto para o frontend React.
+
+### Build de Produção
+
+Para gerar o binário final (macOS `.app` bundle):
+
+```bash
+make gui-build
+```
+
+O binário será gerado em `gui/build/bin/`.
+
+## 🎨 Design
+
+A interface utiliza o tema **Glassmorphism**, com:
+- **Fundo:** Transparência com blur (`backdrop-filter: blur(12px)`).
+- **Cores:** Paleta futurista dark baseada no `docs/ui-system-design.md`.
+- **Métricas:** Atualização em tempo real (1s) via Wails bindings.
+
+## 🛠️ Estrutura do Projeto
+
+- `gui/app.go`: Lógica Go que interage com a interface (Wails bindings).
+- `gui/main.go`: Ponto de entrada da aplicação Wails.
+- `gui/frontend/src/App.tsx`: Componente principal do dashboard.
+- `gui/frontend/src/style.css`: Estilos globais e tema "Glass".
